@@ -1,14 +1,14 @@
 /*------------------------------------------------------------------+
  |                                                                  |
- |	UERJ - Universidade do Estado do Rio de Janeiro                 |
- |	CTC: Centro de Tecnologia e Ciências                            |
- |	IME: Instituto de Matemática e Estatística                      |
- |	Departamento de Informática e Ciência da Computação             |
+ |	UERJ - Universidade do Estado do Rio de Janeiro             |
+ |	CTC: Centro de Tecnologia e Ciências                        |
+ |	IME: Instituto de Matemática e Estatística                  |
+ |	Departamento de Informática e Ciência da Computação         |
  |                                                                  |
- | 	TRABALHO FINAL DE COMPUTAÇÃO GRÁFICA                            |
+ | 	TRABALHO FINAL DE COMPUTAÇÃO GRÁFICA                        |
  |                                                                  |
- | 	Bruno Costa ....... mat:201320712211                            |
- | 	Daniel Calábria ... mat:201320486511                            |  
+ | 	Bruno Costa ....... mat:201320712211                        |
+ | 	Daniel Calábria ... mat:201320486511                        |  
  |                                                                  |
  |                                                                  |
  +------------------------------------------------------------------*/
