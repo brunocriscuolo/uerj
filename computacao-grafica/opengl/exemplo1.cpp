@@ -1,4 +1,3 @@
-//PrimeiroPrograma.c - Isabel H. Manssour
 //Um programa OpenGL simples que abre uma janela GLUT
 //Este código está baseado no Simple.c, exemplo
 //disponível no livro "OpenGL SuperBible",

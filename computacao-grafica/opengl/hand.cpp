@@ -8,7 +8,7 @@
  | 	TRABALHO FINAL DE COMPUTAÇÃO GRÁFICA                            |
  |                                                                  |
  | 	Bruno Costa ....... mat:201320712211                            |
- | 	Daniel Calábria ... mat:201320486511                            |  
+ | 	Daniel Calábria ... mat:201320486511                            |
  |                                                                  |
  |                                                                  |
  +------------------------------------------------------------------*/
