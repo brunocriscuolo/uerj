@@ -1,0 +1,6 @@
+Idade: 41
+Salário: 2500
+
+Idade: 42
+Salário: 2800
+

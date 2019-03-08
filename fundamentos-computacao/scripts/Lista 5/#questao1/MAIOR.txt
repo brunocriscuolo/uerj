@@ -1,0 +1,15 @@
+Idade: 22
+Salário: 4000
+
+Idade: 42
+Salário: 8000
+
+Idade: 21
+Salário: 5000
+
+Idade: 30
+Salário: 5200
+
+Idade: 27
+Salário: 4300
+

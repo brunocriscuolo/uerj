@@ -1,0 +1,3 @@
+Idade: 19
+Salário: 1300
+
