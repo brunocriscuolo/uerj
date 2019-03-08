@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Trabalho de BD2</title>
+    <link rel="stylesheet" media="screen" href ="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/bootstrap-theme.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <br>
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://127.0.0.1:5000/">NoSQL App</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="http://127.0.0.1:5000/">Inicio</a></li>
+              <li><a href="http://127.0.0.1:5000/cadastrar">Cadastrar</a></li>
+              <li class="active"><a href="#">Buscar</a></li>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+
+      <h2>Buscar Cadastro</h2>
+
+      <br>
+
+      <form action="" method="post" role="form">
+      {{ form.csrf }}
+        <label for="nome">Filtrar por:</label>
+        <div class="row">
+          <div class="col-xs-2">
+              {{ form.filtro }}
+          </div>
+          <div class="col-xs-7">
+            <input type="text" class="form-control" id="nome" name="busca" placeholder="Inisra um valor para pesquisar.">
+          </div>
+        </div>
+
+        <br><br>
+
+        <button type="submit" class="btn btn-success">Buscar</button>
+
+      </form>
+
+      <br>
+
+      {% with messages = get_flashed_messages() %}
+            {% if messages %}
+              {% for message in messages %}
+                      <hr><br>
+                      <div class="alert alert-info">
+                        <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span> {{ message }}
+                      </div>
+              {% endfor %}
+            {% endif %}
+      {% endwith %}
+
+      <br>
+      <br>
+
+      {% if form.display %}
+        <div class="table-responsive">
+          <table class="table-striped" style="width:100%">
+            <tr>
+              <th>Nome</th>
+              <th>Idade</th> 
+              <th>Curso</th>
+              <th>Matricula</th>
+              <th>Disciplina de interesse</th>
+              <th>E-mail</th>
+            </tr>
+              {% for i in range(form.cont) %}
+                <tr>
+                  <td> {{ form.retorno_nome[i] }} </td>
+                  <td> {{ form.retorno_idade[i] }} </td>
+                  <td> {{ form.retorno_curso[i] }} </td>
+                  <td> {{ form.retorno_matricula[i] }} </td>
+                  <td> {{ form.retorno_disciplina[i] }} </td> 
+                  <td> {{ form.retorno_email[i] }} </td>
+                </tr>
+              {% endfor %}      
+          </table>
+        </div>
+      {% endif %}
+
+    </div><!-- /container -->
+
+  </body>
+
+</html>

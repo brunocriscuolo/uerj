@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Trabalho de BD2</title>
+    <link rel="stylesheet" media="screen" href ="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/bootstrap-theme.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <br>
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://127.0.0.1:5000/">NoSQL App</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="http://127.0.0.1:5000/">Inicio</a></li>
+              <li class="active"><a href="#">Cadastrar</a></li>
+              <li><a href="http://127.0.0.1:5000/buscar">Buscar</a></li>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+
+      <h2>Cadastro de Alunos</h2>
+
+      <br>
+
+      <form  action="" method="post" role="form">
+        {{ form.csrf }}
+        <div class="form-group">
+          <label for="nome">Nome:</label>
+          <input type="text" class="form-control" id="nome" name="nome" placeholder="Qual é o seu nome?">
+          <br>
+          <label for="idade">Idade:</label>
+          <input type="text" maxlength="2" class="form-control" id="idade" name="idade" placeholder="Quantos anos você têm?">
+          <br>
+          <label for="matricula">Matrícula:</label>
+          <input type="text" maxlength="12" class="form-control" id="matricula" name="matricula" placeholder="Digite o número da sua matricula.">
+          <br>
+          <label for="curso">Curso:</label>
+          <input type="text" class="form-control" id="curso" name="curso" placeholder="Qual é o seu curso?">
+          <br>
+          <label for="disciplina">Disciplina de interesse:</label>
+          <input type="text" class="form-control" id="disciplina" name="disciplina" placeholder="Conte-nos qual sua disciplina de maior interesse no curso.">
+          <br>
+          <label for="email">Email:</label>
+          <input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control" id="email" name="email" placeholder="Seu email será usado como forma de contato.">
+          <small class="form-text text-muted">Fomato: meu.nome@exemplo.com.br.</small>
+        </div>
+        <button type="submit" class="btn btn-success">Salvar</button>
+      </form>
+
+      <br>
+
+      {% with messages = get_flashed_messages() %}
+            {% if messages %}
+              {% for message in messages %}
+                      <div class="alert alert-success">
+                        <strong>Parabéns! </strong> {{ message }}
+                      </div>
+              {% endfor %}
+            {% endif %}
+      {% endwith %}
+
+    </div><!-- /container -->
+
+  </body>
+
+</html>
