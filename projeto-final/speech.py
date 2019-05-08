@@ -1,14 +1,24 @@
 import speech_recognition as sr
+from gtts import gTTS
+import os
 
-microphone = sr.Recognizer()
-with sr.Microphone(device_index=0) as source:
-    microphone.adjust_for_ambient_noise(source)
-    print('Speak anything...\n')
-    audio = microphone.listen(source)
+def listen():
+    microphone = sr.Recognizer()
+    with sr.Microphone() as source:
+        print('Speak anything...\n')
+        audio = microphone.listen(source)
+        try:
+            text = microphone.recognize_google(audio)
+            print('You said: {}'.format(text))
+        except:
+            print('Sorry, could not recognize your voice.')
+    return text
 
-    try:
-        text = microphone.recognize_google(audio)
-        print('You said: {}'.format(text))
+def speak(audio):
+    tts = gTTS(text=audio, lang='en')
+    tts.save('sound.mp3')
+    #print("I'm learning what you said...")
+    os.system("mpg321 sound.mp3")
 
-    except:
-        print('Sorry, could not recognize your voice.')
+phrase = listen()
+speak(phrase)
